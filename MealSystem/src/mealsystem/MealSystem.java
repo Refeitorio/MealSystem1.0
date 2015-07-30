@@ -5,14 +5,12 @@
  */
 package mealsystem;
 
-/**
- *
- * @author Pacifyc
- */
+//
 public class MealSystem {
 
     int x;
     double i;
+      
 
     public MealSystem() {
     }
@@ -21,10 +19,10 @@ public class MealSystem {
        
     
     
-     * @param args the command line arguments
-     */
+     
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        //
     }
     
 }
