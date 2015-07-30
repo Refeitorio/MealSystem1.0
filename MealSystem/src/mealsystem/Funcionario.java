@@ -5,23 +5,10 @@
  */
 package mealsystem;
 
-//
-public class MealSystem {
-
-
-      
-
-    public MealSystem() {
-    }
-   
-    
-       
-    
-    
-     
-   
-    public static void main(String[] args) {
-        //
-    }
+/**
+ *
+ * @author Pacifyc
+ */
+public class Funcionario {
     
 }
