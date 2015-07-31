@@ -10,5 +10,13 @@ package mealsystem;
  * @author Pacifyc
  */
 public class Funcionario {
-    
+    String nome;
+    public void CriarFunc(){
+    //metodo do funcionario
+    }
+    public String getnome(){
+        
+        System.out.println("funcionando");
+        return nome;
+    }
 }

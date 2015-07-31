@@ -1,37 +1,79 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//--------------------------------------Imports
 package mealsystem;
-
-/**
- *
- * @author Pacifyc
- */
-public class Empresa implements Funcionario {
+import mealsystem.Funcionario;
+   import java.util.ArrayList;
+import java.util.Arrays;
+//----------------------------------------------------Comeco da classe
+public class Empresa {
    
-//Atributos
+//----------------------------------------Atributos
+    ArrayList <Funcionario> Cfunc =new ArrayList<Funcionario>();
     String nome,cnpj;
     Funcionario Func;
+    //---------------------------------Classe principal
+    public void Empresa(ArrayList <Funcionario> Cfunc,String nome,String cnpj, Funcionario Func){
+this.Cfunc=Cfunc;
+this.Func=Func;
+this.cnpj=cnpj;
+this.nome=nome;
+    }
+ //-------------------------------------Geters e Seters
+    public String getNome(){
+    return nome;
+    }
+    //------------------------------------------
+    public void setNome(String n){
+    this.nome=n;
+        System.out.println("Nome alterado");
+    }
+   //---------------------------------------------
+    public String getCnpj(){
+    return cnpj;
+    }
+    //----------------------------------------------
+    public void setCnpj(String c){
+        this.cnpj= c;
+        System.out.println("CNPJ alterado!");
+    }
+    
+                            //Metodos
+
     /**
      *
-     * @param Func
+     * @param func
      */
+       public void CadFunc(Funcionario func){
+    Cfunc.add(func);
+       System.out.println("Funcionario cadastrado");
+    }
+   //----------------------------------------------------
+    public void List_Func(){
+        System.out.println(Arrays.toString(Cfunc.toArray()));
     
-     //Metodos
-    public void CadastrarFunc(Funcionario Func){
-    //Corpo do metodo
     }
-    public Funcionario ListarFunc(){
-    //Corpo do metodo
+    //-----------------------------------------------------
+    public void Rem_Func(Funcionario f){
+    Cfunc.remove(f);
+        System.out.println("Funcionario removido");
     }
-    public void removerFunc(){
-    //Corpo do metodo
+    //---------------------------------Pesquisa
+    public void Pes_nome(String n){
+    Funcionario a=null;
+    int i=0;
+    while (i<Cfunc.size()){
+    a=Cfunc.get(i);
+    if(a.getnome().equals(n)){
+        System.out.println(Arrays.toString(Cfunc.toArray()));
+    
+    
     }
-    public Funcionario pesquizar(){
-    //Corpo do metodo
+    else{
+            System.out.println("Funcionario não encontrado para os dados informados");
+            
+    }
+    }
+       
 }
 
     
-}   
+} 
