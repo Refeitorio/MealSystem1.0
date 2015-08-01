@@ -3,17 +3,18 @@ package mealsystem;
 import mealsystem.Funcionario;
    import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 //----------------------------------------------------Comeco da classe
 public class Empresa {
    
 //----------------------------------------Atributos
-    ArrayList <Funcionario> Cfunc =new ArrayList<Funcionario>();
+    ArrayList <Funcionario> Cfunc =new ArrayList<Funcionario>();    
     String nome,cnpj;
     Funcionario Func;
     //---------------------------------Classe principal
-    public void Empresa(ArrayList <Funcionario> Cfunc,String nome,String cnpj, Funcionario Func){
-this.Cfunc=Cfunc;
-this.Func=Func;
+    public void Empresa(String nome,String cnpj){
+this.Cfunc=null;
+this.Func=null;
 this.cnpj=cnpj;
 this.nome=nome;
     }
@@ -35,14 +36,10 @@ this.nome=nome;
         this.cnpj= c;
         System.out.println("CNPJ alterado!");
     }
-    
-                            //Metodos
+   //------------------------------------------------//Metodos
 
-    /**
-     *
-     * @param func
-     */
        public void CadFunc(Funcionario func){
+           System.out.println("");
     Cfunc.add(func);
        System.out.println("Funcionario cadastrado");
     }
@@ -52,12 +49,12 @@ this.nome=nome;
     
     }
     //-----------------------------------------------------
-    public void Rem_Func(Funcionario f){
-    Cfunc.remove(f);
+    public void Rem_Func(Funcionario func){//falta coletar os dados
+    Cfunc.remove(func);
         System.out.println("Funcionario removido");
     }
-    //---------------------------------Pesquisa
-    public void Pes_nome(String n){
+    //---------------------------------Pesquisa por nome
+    public void Pesq_nome(String n){
     Funcionario a=null;
     int i=0;
     while (i<Cfunc.size()){
@@ -71,9 +68,40 @@ this.nome=nome;
             System.out.println("Funcionario não encontrado para os dados informados");
             
     }
+    i++;
     }
        
 }
-
+    //-------------------------------------------------------Pesquisa por CPF
+public void Pesq_CPF(int cpf){
+   Funcionario a=null;
+    int i=0;
+    while (i<Cfunc.size()){
+    a=Cfunc.get(i);
+    if(a.getcpf().equals(cpf)){
+        System.out.println(Arrays.toString(Cfunc.toArray()));
     
-} 
+    
+    }
+    else{
+            System.out.println("Funcionario não encontrado para os dados informados");
+            
+    }
+    i++;
+    
+    }
+    
+    
+}
+//---------------------------------------------------Criar empresa
+public void CadEmpresa(){
+    Scanner en= new Scanner(System.in);
+   String nome,cnpj;
+    System.out.println("Digite o nome da empresa");
+  nome=en.nextLine();
+    System.out.println("Digite o CNPJ para a empresa");
+    cnpj=en.nextLine();
+    Empresa(nome,cnpj);
+}
+
+}

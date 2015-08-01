@@ -10,13 +10,31 @@ package mealsystem;
  * @author Pacifyc
  */
 public class Funcionario {
-    String nome;
-    public void CriarFunc(){
-    //metodo do funcionario
+    
+    //------------------------Atributos
+    String nome,cpf;
+    
+    //-------------------------------------Classe principal
+     public void Funcionario(String nome,String cpf){
+    
+      this.cpf=cpf;
+      this.nome=nome;
+        System.out.println("Funcionario criado");
     }
+    
+    //---------------------------Geters e Seters
+    public String getcpf(){
+    return cpf;
+    }
+    //----------------------------------------------
     public String getnome(){
         
         System.out.println("funcionando");
         return nome;
     }
+    //----------------------------------
+    
+
+   
+    
 }
